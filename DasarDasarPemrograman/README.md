@@ -1,6 +1,5 @@
-# UKSW
-Sebuah repository untuk menyimpan source code dari latihan-latihan yang diterangkan dalam perkuliahan.<br/>
-Materi (PPT) dan recording perkuliahan bisa ditemukan di [FLEARN](https://flearn.uksw.edu/) atau Google Classroom.
+# Dasar-dasar Pemrograman (DDP)
+Dalam folder ini berisi source code dari latihan-latihan yang diterangakan pada kelas Dasar-dasar Pemrograman (DDP)
 
 ## Catatan
-Silahkan masuk ke dalam folder yang sesuai dengan mata kuliah.
+Silahkan pilih pada semester yang sesuai.
