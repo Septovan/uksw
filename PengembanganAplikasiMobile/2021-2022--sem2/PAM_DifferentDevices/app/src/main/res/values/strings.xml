@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mahasiswa</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_welcome">Welcome</string>
+    <string name="txt_username">Username</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_signup">Sign up</string>
+</resources>
