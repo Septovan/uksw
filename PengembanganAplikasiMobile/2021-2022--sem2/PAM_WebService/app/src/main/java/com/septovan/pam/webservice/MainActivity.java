@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startRequestingYouTubeApi() {
-        String key = "AIzaSyAYEzaAnUJEXQYpR74ns5kLC2htpD0jJLo";
+        String key = "[YOUR-API-KEY]";
         String channelId = "UCLmAtLJAB9YPNO9N98rRQNg";
         String type = "video";
 
