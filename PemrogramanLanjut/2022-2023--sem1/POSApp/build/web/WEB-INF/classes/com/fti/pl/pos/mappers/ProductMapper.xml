@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="Product">
+    
+    <resultMap id="baseResult" type="Product">
+        <result property="id" column="id" />
+    </resultMap>
+    
+    <insert id="insert" parameterType="Product">
+        INSERT INTO tb_products (nama, keterangan, harga) VALUES (#{nama}, #{keterangan}, #{harga});
+        
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+    
+    <select id="getAll" resultMap="baseResult">
+        SELECT * FROM tb_products
+    </select>
+    
+    <select id="getById" parameterType="int" resultMap="baseResult">
+        SELECT * FROM STUDENT WHERE ID = #{id};
+    </select>
+    
+</mapper>
