@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mahasiswa</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID#</th>
+                <th>NIM</th>
+                <th>NAMA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="mahasiswa : ${mahasiswaList}">
+                <tr>
+                    <td th:text="${mahasiswa.id}"></td>
+                    <td th:text="${mahasiswa.nim}"></td>
+                    <td th:text="${mahasiswa.nama}"></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</body>
+</html>
