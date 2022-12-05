@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Mahasiswa</title>
+</head>
+<body>
+    <form th:action="@{/mahasiswa/doProcess}" method="post" th:object="${mahasiswa}">
+        <input type="hidden" th:field="*{id}" />
+        <table>
+            <tbody>
+                <tr>
+                    <td>NIM</td>
+                    <td>:</td>
+                    <td><input type="text" th:field="*{nim}" /></td>
+                </tr>
+                <tr>
+                    <td>Nama</td>
+                    <td>:</td>
+                    <td><input type="text" th:field="*{nama}" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submit" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -24,8 +26,28 @@ public class MahasiswaController {
     }
 
     @RequestMapping(path = "add")
-    public String addMahasiswa() {
-        return "mahasiswa/addMahasiswa";
+    public String addMahasiswa(Model model) {
+        Mahasiswa mhs = new Mahasiswa();
+        model.addAttribute("mahasiswa", mhs);
+        return "mahasiswa/formMahasiswa";
     }
 
+    @RequestMapping(path = "doProcess", method = RequestMethod.POST)
+    public String doProcessMahasiswa(Mahasiswa mahasiswa) {
+        _mahasiswaRepository.save(mahasiswa);
+        return "redirect:/mahasiswa/";
+    }
+
+    @RequestMapping(path = "edit")
+    public String editMahasiswa(Model model, @RequestParam(name = "idMahasiswa") String idMahasiswa) {
+        Mahasiswa mhs = _mahasiswaRepository.findById(Integer.valueOf(idMahasiswa)).get();
+        model.addAttribute("mahasiswa", mhs);
+        return "mahasiswa/formMahasiswa";
+    }
+
+    @RequestMapping(path = "delete")
+    public String doDeleteMahasiswa(@RequestParam(name = "idMahasiswa") String idMahasiswa) {
+        _mahasiswaRepository.deleteById(Integer.valueOf(idMahasiswa));
+        return "redirect:/mahasiswa/";
+    }
 }

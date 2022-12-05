@@ -5,23 +5,29 @@
     <title>Mahasiswa</title>
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>ID#</th>
-                <th>NIM</th>
-                <th>NAMA</th>
-            </tr>
-        </thead>
-        <tbody>
-            <th:block th:each="mahasiswa : ${mahasiswaList}">
-                <tr>
-                    <td th:text="${mahasiswa.id}"></td>
-                    <td th:text="${mahasiswa.nim}"></td>
-                    <td th:text="${mahasiswa.nama}"></td>
-                </tr>
-            </th:block>
-        </tbody>
-    </table>
+<h5><a th:href="@{/mahasiswa/add}">+Tambah Mahasiswa</a></h5>
+<table>
+    <thead>
+    <tr>
+        <th>ID#</th>
+        <th>NIM</th>
+        <th>NAMA</th>
+        <th>AKSI</th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="mahasiswa : ${mahasiswaList}">
+        <tr>
+            <td th:text="${mahasiswa.id}"></td>
+            <td th:text="${mahasiswa.nim}"></td>
+            <td th:text="${mahasiswa.nama}"></td>
+            <td>
+                <a th:href="@{/mahasiswa/edit(idMahasiswa=${mahasiswa.id})}">Edit</a> |
+                <a th:href="@{/mahasiswa/delete(idMahasiswa=${mahasiswa.id})}">Delete</a>
+            </td>
+        </tr>
+    </th:block>
+    </tbody>
+</table>
 </body>
 </html>
