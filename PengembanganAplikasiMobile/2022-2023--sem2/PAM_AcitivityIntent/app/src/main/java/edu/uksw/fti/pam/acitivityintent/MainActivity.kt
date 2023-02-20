@@ -2,17 +2,14 @@ package edu.uksw.fti.pam.acitivityintent
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,7 +31,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 internal fun doAuth(
     username: String,
     password: String,
@@ -56,32 +52,41 @@ fun LoginForm() {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         TextField(
-            value = usernameInput.toString(),
+            value = usernameInput,
             onValueChange = { usernameInput = it },
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(R.string.label_username)) },
             modifier = Modifier.fillMaxWidth(),
         )
         TextField(
-            value = passwordInput.toString(),
+            value = passwordInput,
             onValueChange = { passwordInput = it },
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.label_password)) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(),
         )
-        Button(
-            onClick = {
-                val isAuthtenticated = doAuth(usernameInput, passwordInput)
-                if (isAuthtenticated) {
-                    lContext.startActivity(
-                        Intent(lContext, HomeActivity::class.java)
-                            .apply {
-                                putExtra("username", usernameInput)
-                            }
-                    )
-                }
-            }
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Text(text = "Login")
+            Button(
+                onClick = {
+                    val isAuthenticated = doAuth(usernameInput, passwordInput)
+                    if (isAuthenticated) {
+                        lContext.startActivity(
+                            Intent(lContext, HomeActivity::class.java)
+                                .apply {
+                                    putExtra("username", usernameInput)
+                                }
+                        )
+                    }
+                }
+            ) {
+                Text(text = stringResource(R.string.btn_title_login))
+            }
+            Button(
+                onClick = { /*TODO*/ }
+            ) {
+                Text(text = stringResource(R.string.btn_title_signup))
+            }
         }
     }
 }

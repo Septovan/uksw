@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PAM Acitivity Intent</string>
+    <string name="label_username">Nama pengguna</string>
+    <string name="label_password">Kata sandi</string>
+    <string name="btn_title_login">Masuk</string>
+    <string name="btn_title_signup">Daftar</string>
+    <string name="btn_label_ok">Oke</string>
+</resources>
