@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "752016117765",
+    "project_id": "pam-kotlin-af277",
+    "storage_bucket": "pam-kotlin-af277.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752016117765:android:1b0c80e2f431975ec80c6c",
+        "android_client_info": {
+          "package_name": "edu.uksw.fti.pam.kotlin.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752016117765-s8n66ii2bir2ejh8uaj9q87o6fna5vkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-w_8YW-vK0XOBEklRRcGI3g29dkuP5hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752016117765-s8n66ii2bir2ejh8uaj9q87o6fna5vkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752016117765:android:ca15bc7ed256f992c80c6c",
+        "android_client_info": {
+          "package_name": "edu.uksw.fti.pam.kotlin.firebaseauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752016117765-s8n66ii2bir2ejh8uaj9q87o6fna5vkk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-w_8YW-vK0XOBEklRRcGI3g29dkuP5hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "752016117765-s8n66ii2bir2ejh8uaj9q87o6fna5vkk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
