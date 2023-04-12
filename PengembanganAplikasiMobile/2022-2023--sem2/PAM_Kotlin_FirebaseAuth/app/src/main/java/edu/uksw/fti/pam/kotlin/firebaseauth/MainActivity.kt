@@ -1,6 +1,8 @@
 package edu.uksw.fti.pam.kotlin.firebaseauth
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
@@ -19,7 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import edu.uksw.fti.pam.kotlin.firebaseauth.contract.SignUpContract
 import edu.uksw.fti.pam.kotlin.firebaseauth.ui.theme.PAMKotlinFirebaseAuthTheme
 
@@ -43,7 +47,6 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun doAuth(username: String, password: String) {
-
         auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
@@ -53,7 +56,7 @@ class MainActivity : ComponentActivity() {
 
                     finish()
                 } else {
-                    Toast.makeText(appli, "Authentication failed.",
+                    Toast.makeText(applicationContext, "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
                 }
             }
